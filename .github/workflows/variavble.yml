@@ -1,0 +1,10 @@
+name: variable context
+on:
+  workflow_dispatch:
+jobs:
+  showing_variables:
+    runs-on:
+      - AINV-Runner
+    steps:
+      - name: showing variable 
+        run: echo "The variable value is ${{ vars.GOOGLE_IP }}"
