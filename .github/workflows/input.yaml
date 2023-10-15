@@ -1,15 +1,19 @@
-name: printing name using env context
-on: workflow_dispatch:
-  inputs:
-    name: 
-      required: true 
-      type: string
-    surname:
-      required: true
-      type: string
+name: SolsticeStartUp/Start_MRO_EOC_AMC_INT-MAN
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        required: true
+        default: utkarsh
+      surname:
+        required: true
+        default: patil
+      
 jobs:
   printing_names:
-    runs-on: utkarsh
+    runs-on:
+      - self-hosted
+      - AINV-Runner
     steps:
       - run: echo 'My name is ${{ inputs.name }}'
       - run: echo 'My surname is ${{ inputs.surname }}'
