@@ -1,10 +1,15 @@
-name: variable context
-on:
-  workflow_dispatch:
+name: Build and deploy
+on: push
+
 jobs:
-  showing_variables:
-    runs-on:
-      - AINV-Runner
+  build:
+    runs-on: AINV-Runner
+    outputs:
+      build_id: ${{ steps.build_step.outputs.build_id }}
     steps:
-      - name: showing variable 
-        run: echo "The variable value is ${{ vars.GOOGLE_IP }}"
+      - uses: actions/checkout@v4
+      - name: Build
+        id: build_step
+        run: |
+          ./build
+          echo "build_id=$BUILD_ID" >> $GITHUB_OUTPUT
