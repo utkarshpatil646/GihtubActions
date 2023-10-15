@@ -1,0 +1,15 @@
+name: printing name using env context
+on: workflow_dispatch:
+  inputs:
+    name: 
+      required: true 
+      type: string
+    surname:
+      required: true
+      type: string
+jobs:
+  printing_names:
+    runs-on: utkarsh
+    steps:
+      - run: echo 'My name is ${{ inputs.name }}'
+      - run: echo 'My surname is ${{ inputs.surname }}'
