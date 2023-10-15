@@ -1,4 +1,4 @@
-name: SolsticeStartUp/Start_MRO_EOC_AMC_INT-MAN
+name: input.yml
 on:
   workflow_dispatch:
     inputs:
