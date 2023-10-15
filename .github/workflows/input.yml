@@ -1,19 +1,16 @@
-name: input.yml
-on:
+name: printing name using input context
+on: 
   workflow_dispatch:
     inputs:
-      name:
-        required: true
+      name: 
+        required: true 
         default: utkarsh
       surname:
         required: true
         default: patil
-      
 jobs:
   printing_names:
-    runs-on:
-      - self-hosted
-      - AINV-Runner
+    runs-on: AINC-Runner
     steps:
       - run: echo 'My name is ${{ inputs.name }}'
       - run: echo 'My surname is ${{ inputs.surname }}'
