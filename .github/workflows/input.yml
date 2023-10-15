@@ -10,7 +10,7 @@ on:
         default: patil
 jobs:
   printing_names:
-    runs-on: AINC-Runner
+    runs-on: AINV-Runner
     steps:
       - run: echo 'My name is ${{ inputs.name }}'
       - run: echo 'My surname is ${{ inputs.surname }}'
